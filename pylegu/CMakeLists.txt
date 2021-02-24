@@ -46,7 +46,7 @@ set(UCL_PREFIX_DIR  ${UCL_INSTALL_DIR})
 ExternalProject_Add(ucl
   URL               ${UCL_URL}
   PREFIX            ${UCL_PREFIX_DIR}
-  #HAD TO MAKE THIS CHANGE TO WORK WITH gcc 8 On Ubuntu 20.04
+  #HAD TO MAKE THIS CHANGE TO WORK ON Ubuntu 20.04
   #CONFIGURE_COMMAND ${UCL_PREFIX_DIR}/src/ucl/configure --prefix=${UCL_INSTALL_DIR} --with-pic
   CONFIGURE_COMMAND CFLAGS=-std=gnu90 ${UCL_PREFIX_DIR}/src/ucl/configure --prefix=${UCL_INSTALL_DIR} --with-pic  BUILD_IN_SOURCE   1
   BUILD_COMMAND     ${MAKE}
